@@ -3,14 +3,13 @@ const { Schema } = mongoose;
 
 const devisSchema = new Schema(
   {
-    name: { type: String, required: true }, // Nom ou société
+    name: { type: String, required: true }, // Nom et prénom / société
     email: { type: String, required: true },
-    phone: { type: String },
-    projectType: { type: String, required: true }, // rénovation, construction, aménagement...
-    location: { type: String, required: true },
-    budget: { type: Number },
-    deadline: { type: String },
-    message: { type: String, required: true },
+    phone: { type: String, required: true },
+    typeOfRequest: { type: String, required: true }, // Type de demande
+    subject: { type: String, required: true }, // Objet de la demande
+    description: { type: String, required: true }, // Description détaillée
+    consent: { type: Boolean, required: true }, // RGPD consent
   },
   { timestamps: true }
 );
